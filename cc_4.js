@@ -55,7 +55,7 @@ const customers = [
 ]
 console.log(customers);
 
-let customerType = "regular";
+let customerType = "regular"
 let extraDiscount = 0;
 if (customerType === "student") 
     extraDiscount = 0.05;
@@ -81,10 +81,30 @@ for (const c of customers) {
         subtotal += p.promoPrice * qty;
         p.inventory -= qty;
     }
+ 
+  let customerType = c.customerType;
+  let extraDiscount = 0;
+  if (customerType === "student") {
+    extraDiscount = 0.05;
+  } else if (customerType === "senior") {
+    extraDiscount = 0.07;
+  } else {
+    extraDiscount = 0;
+  }
 
   let finalTotal = subtotal * (1 - extraDiscount);
   console.log(`Customer ${c.id}: $${finalTotal.toFixed(2)}`);
 
 };
 
+const productAfterDiscount = products[0];
+for (a in productAfterDiscount){
+    console.log(`${a}: ${productAfterDiscount[a]}`)
+};
+
+for (const [index, product] of Object.entries(products)) {
+    for (const [key, value] of Object.entries(product)) {
+        console.log(`${key}: ${value}`)
+    }
+};
 
