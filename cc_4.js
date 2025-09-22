@@ -1,3 +1,5 @@
+// Step 2
+
 const products = [
     {sku: "M-001", name:"Lipstick", category: "makeup", price: 40.50, inventory: 50},
     {sku: "M-002", name: "Mascara", category: "makeup", price: 30, inventory: 100},
@@ -6,6 +8,7 @@ const products = [
     {sku: "A-005", name: "Jacket", category: "apparel", price: 200, inventory: 200}
 ];
 
+// Step 3
 for (let p of products) {
     let discount = 0
 
@@ -25,9 +28,9 @@ for (let p of products) {
 
     let promoPrice = p.price - (p.price * discount);
     p.promoPrice = +promoPrice.toFixed(2)
-}
-console.log(products);
+};
 
+// Step 4
 const customers = [
     {
         id: 1,
@@ -52,8 +55,7 @@ const customers = [
         cart: [{sku: "M-002", qty: 1}, {sku: "E-003", qty: 3}, {sku: "A-005", qty: 1}]
     }
 
-]
-console.log(customers);
+];
 
 let customerType = "regular"
 let extraDiscount = 0;
@@ -65,6 +67,7 @@ if (customerType === "student")
     extraDiscount = 0
 ;
 
+// Step 5
 for (const c of customers) {
     let subtotal = 0;
 
@@ -97,11 +100,13 @@ for (const c of customers) {
 
 };
 
+// Step 6
 const productAfterDiscount = products[0];
 for (a in productAfterDiscount){
     console.log(`${a}: ${productAfterDiscount[a]}`)
 };
 
+// Step 7
 for (const [index, product] of Object.entries(products)) {
     for (const [key, value] of Object.entries(product)) {
         console.log(`${key}: ${value}`)
